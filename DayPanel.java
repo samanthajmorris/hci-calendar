@@ -83,7 +83,7 @@ public class DayPanel extends JPanel
      xplacement = xplacement + xdim;
      placements[6] = xplacement;
      day7.setBounds(xplacement, yplacement, size.width, size.height); // Saturday
-     
+
 
    }
    // Returns the placements that were given to each of the JLabels (the weekdays).
