@@ -8,7 +8,7 @@
  *            class. The layout of the main frame is BoxLayout.
  * Date:      October 23, 2018
  */
-
+package CalendarInterface;
 import javax.swing.*;
 import java.awt.*;
 
@@ -16,7 +16,7 @@ public class CalendarFrame
 {
    public static void main(String[] args)
    {
-     // Do not change any of the dimensions. Bad things will happen.
+     // Do not change any of the dimensions (at least the x's). Bad things will happen.
      MonthYearPanel monthp = new MonthYearPanel();
      monthp.setPreferredSize(new Dimension(100,100));
      
@@ -24,7 +24,7 @@ public class CalendarFrame
      dayp.setPreferredSize(new Dimension(100,100));      
 
      CalendarPanel calp = new CalendarPanel();
-     calp.setPreferredSize(new Dimension(500,300));
+     calp.setPreferredSize(new Dimension(500,400));//500 300
       
      //getting the placements of the buttons from the DayPanel.
       int[] placements = new int[7];
@@ -42,7 +42,7 @@ public class CalendarFrame
       frame.getContentPane().add(dayp);
       frame.getContentPane().add(calp);
 
-      frame.setPreferredSize(new Dimension(985,500));
+      frame.setPreferredSize(new Dimension(985,600));
       
       // The Window won't be resizeable to allow for good button placement.
       frame.setResizable(false);

@@ -4,8 +4,9 @@
  * Purpose:   This is the class that creates one week of date objects. 
  * Date:      October 23, 2018 
  */
-
+package CalendarInterface;
 import java.util.*;
+
 public class OneWeek extends Date
 {
   private String[] months; // This is the String version of the integer output that the Date object will give me.

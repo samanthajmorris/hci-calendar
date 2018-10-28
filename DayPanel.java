@@ -4,6 +4,8 @@
  * Purpose:   This is the class that contains the JLabels that represent the weekdays of the calendar.
  * Date:      October 23, 2018
  */
+
+package CalendarInterface;
 import java.awt.*;
 import javax.swing.*;
 

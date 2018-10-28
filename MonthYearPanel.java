@@ -4,9 +4,11 @@
  * Purpose:   This is the class that contains the JLabels that represent the month and the year.
  * Date:      October 23, 2018
  */
+
+
+package CalendarInterface;
 import java.awt.*;
 import javax.swing.*;
-
 
 public class MonthYearPanel extends JPanel
 {
