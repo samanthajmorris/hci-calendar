@@ -85,4 +85,13 @@ public class convert
       
      return dates;
  }
+ public void backend(boolean [][] array, String name, String path)
+  {
+    //convert newCon = new convert();
+    String returnString = convertArray(array);
+    System.out.println(returnString);
+    
+    SamsFunctions func = new SamsFunctions(name, returnString, path);
+    func.addEntry(name, returnString, path); 
+  }
 }

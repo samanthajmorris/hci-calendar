@@ -18,7 +18,7 @@ public class gui_init extends JFrame implements ActionListener {
  private JButton btUploadFile, btSubmit;
  private Color lime = new Color(129, 196, 43);
  private Color maroon = new Color(234, 98, 98);
- public String filePath;
+ public static String filePath;
  public String returnString;
  public void createView() {
   
@@ -89,25 +89,14 @@ public class gui_init extends JFrame implements ActionListener {
   if (e.getSource() == btSubmit) {
    setVisible(false);
    CalendarFrame.main();
-   CalendarPanel cal = new CalendarPanel();
-   boolean [] [] availability = cal.getAvailability();
-   backend(availability, "sampleName", getPath());
   }
  }
  
- public String getPath(){
+ public static String getPath(){
   return filePath; 
  }
  
- public void backend(boolean [][] array, String name, String path)
-  {
-    convert newCon = new convert();
-    returnString = newCon.convertArray(array);
-    System.out.println(returnString);
-    
-    SamsFunctions func = new SamsFunctions(name, returnString, path);
-    func.addEntry(name, returnString, path); 
-  }
+ 
 
  // main() method
  public static void main(String[] args) {
