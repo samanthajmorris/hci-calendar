@@ -253,11 +253,10 @@ public class CalendarPanel extends JPanel
      public void actionPerformed(ActionEvent e)
      {
        boolean [][] avail = getAvailability();
-       gui_init g = new gui_init();
+       gui_init g = new gui_init(0);
        String pathToFile = gui_init.getPath();
        convert f = new convert();
        f.backend(avail, "sampleName", pathToFile);
-       
          }
        }
      

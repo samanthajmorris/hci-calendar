@@ -9,7 +9,6 @@ import javax.swing.*;
 import javax.swing.filechooser.*;
 import java.awt.event.*;
 import java.awt.Color;
-import CalendarInterface.*;
 
 public class gui_init extends JFrame implements ActionListener {
  
@@ -56,7 +55,12 @@ public class gui_init extends JFrame implements ActionListener {
    lbExistingFile.setText(fileName);
  }
  
- gui_init() {
+ // If setup is 1 it will display the intro frame. 
+ // If not, you can just use gui_init's functions.
+ gui_init(int setup) 
+ {
+   if (setup == 1)
+   {
   createView();
   
   // General defaults
@@ -67,7 +71,7 @@ public class gui_init extends JFrame implements ActionListener {
         setSize(410,160);
         setVisible(true);
     }
- 
+ }
  // ActionEvent handler
  public void actionPerformed(ActionEvent e) {
   // Upload a file
@@ -103,7 +107,7 @@ public class gui_init extends JFrame implements ActionListener {
   SwingUtilities.invokeLater(new Runnable() {
    @Override
    public void run() {
-    new gui_init();
+    new gui_init(1);
    }
   });
  }
