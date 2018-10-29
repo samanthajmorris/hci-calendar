@@ -26,23 +26,28 @@ public class gui_init extends JFrame implements ActionListener {
 		p.add(lbQuestion1);
 		lbQuestion2 = new JLabel("or submit without one to create a new session.");
 		p.add(lbQuestion2);
-	
-		// Upload Existing
-		lbExistingFile = new JLabel("Upload the group text file "
-				+"to add to an existing file");
+
+		// existing file label updates when file selected
+		lbExistingFile = new JLabel("Upload a file");
+		lbExistingFile.setSize(100,30);
 		p.add(lbExistingFile);
+		
+		// Upload Existing
 		btUploadFile = new JButton("Upload");
 		p.add(btUploadFile);
-
 		// Upload file action
 		btUploadFile.addActionListener((ActionListener) this);
-				
+		
 		// Submit all
 		btSubmit = new JButton("Submit");
 		p.add(btSubmit);
 		
 		// Submit action
 		btSubmit.addActionListener((ActionListener) this);
+	}
+	
+	private void updateFileName(String fileName) {
+		lbExistingFile.setText(fileName);
 	}
 	
 	gui_init() {
@@ -53,7 +58,6 @@ public class gui_init extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
         setLocationRelativeTo(null);
-//        setResizable(false);
         setSize(410,160);
         setVisible(true);
     }
@@ -72,9 +76,10 @@ public class gui_init extends JFrame implements ActionListener {
 			if (returnValue == JFileChooser.APPROVE_OPTION) {
 				System.out.println(jfc.getSelectedFile().getPath());
 				System.out.println(jfc.getSelectedFile().getName());
+				updateFileName(jfc.getSelectedFile().getName());
 			}
 		}
-		// Submit
+		// Submit and run calendar
 		if (e.getSource() == btSubmit) {
 			setVisible(false);
 			CalendarFrame.main();
