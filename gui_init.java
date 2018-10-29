@@ -9,7 +9,7 @@ import javax.swing.*;
 import javax.swing.filechooser.*;
 import java.awt.event.*;
 import java.awt.Color;
-import CalendarInterface.CalendarFrame;
+import CalendarInterface.*;
 
 public class gui_init extends JFrame implements ActionListener {
  
@@ -18,6 +18,8 @@ public class gui_init extends JFrame implements ActionListener {
  private JButton btUploadFile, btSubmit;
  private Color lime = new Color(129, 196, 43);
  private Color maroon = new Color(234, 98, 98);
+ public String filePath;
+ public String returnString;
  public void createView() {
   
   JPanel p = new JPanel();
@@ -87,8 +89,25 @@ public class gui_init extends JFrame implements ActionListener {
   if (e.getSource() == btSubmit) {
    setVisible(false);
    CalendarFrame.main();
+   CalendarPanel cal = new CalendarPanel();
+   boolean [] [] availability = cal.getAvailability();
+   backend(availability, "sampleName", getPath());
   }
  }
+ 
+ public String getPath(){
+  return filePath; 
+ }
+ 
+ public void backend(boolean [][] array, String name, String path)
+  {
+    convert newCon = new convert();
+    returnString = newCon.convertArray(array);
+    System.out.println(returnString);
+    
+    SamsFunctions func = new SamsFunctions(name, returnString, path);
+    func.addEntry(name, returnString, path); 
+  }
 
  // main() method
  public static void main(String[] args) {
