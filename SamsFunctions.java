@@ -50,7 +50,8 @@ public class SamsFunctions {
         }
         catch (Exception e) 
         {
-            e.printStackTrace();
+          System.out.println("ERROR: addEntry");
+          e.printStackTrace();
         }     
     }
 
@@ -90,7 +91,7 @@ public class SamsFunctions {
       //System.out.println(myMap);
       
       //Instantiate array of all 1's. Change 5 to 252.
-      int[] availability = new int[5];
+      int[] availability = new int[252];
       for (int i = 0; i < availability.length; i++)
       {
         availability[i] = 1;
@@ -126,7 +127,7 @@ public class SamsFunctions {
     
   }
   
-  public static void main(String[] args) throws IOException {
+  /*public static void main(String[] args) throws IOException {
     String pathy = "/Users/samanthamorris/Documents/hci-calendar-master/sample.json";
     
     addEntry("Samantha", "10110", pathy);
@@ -134,7 +135,7 @@ public class SamsFunctions {
     addEntry("Keara", "10000", pathy);
     System.out.println("Availability: ");
     System.out.println(calculate(pathy));
-  }
+  }*/
     
   
 }
