@@ -1,6 +1,14 @@
+/*
+ * File Name: gui_init.java
+ * Author:    Keara Leibovitz
+ * Purpose:   Creates the initial gui that you see on screen. Runs the calendar gui on submit.
+ * Date:      October 26, 2018
+ */
+
 import javax.swing.*;
 import javax.swing.filechooser.*;
 import java.awt.event.*;
+import CalendarInterface.CalendarFrame;
 
 public class gui_init extends JFrame implements ActionListener {
 	
@@ -69,12 +77,12 @@ public class gui_init extends JFrame implements ActionListener {
 		// Submit
 		if (e.getSource() == btSubmit) {
 			setVisible(false);
-			System.exit(0);
+			CalendarFrame.main();
 		}
 	}
 
 	// main() method
-	public static void main() {
+	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
