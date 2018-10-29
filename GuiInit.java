@@ -29,6 +29,7 @@ public class GuiInit extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setSize(410,160);
         setVisible(true);
+        System.out.println("hello");
     }
  
  public void createView() {
@@ -105,7 +106,7 @@ public class GuiInit extends JFrame implements ActionListener {
     returnString = newCon.convertArray(array);
     System.out.println(returnString);
     
-    SamsFunctions func = new SamsFunctions();
+    SamsFunctions func = new SamsFunctions(name, returnString, path);
     func.addEntry(name, returnString, path); 
   }
 

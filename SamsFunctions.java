@@ -18,8 +18,16 @@ import org.json.simple.parser.JSONParser;
 
 public class SamsFunctions {
   
-  public SamsFunctions() {
+  public String name;
+  public String num;
+  public String pathToFile;
+  
+  public SamsFunctions(String na, String n, String p) {
     //contstructor
+    name = na;
+    num = n;
+    pathToFile = p;
+    
   }
   
   public static void addEntry(String name, String num, String pathToFile){
