@@ -12,7 +12,7 @@ This repository contains:
 * A tool which schedules meeting times
 
 
-# Getting Started java.nio
+# Getting Started
 
 1.	Download or clone the repository
 2.	This tool depends on the following Java modules: java.io, java.lang, com.google.json(provided), java.util, java.nio, org.json.simple(provided). Please ensure these modules are in your Java environment.
