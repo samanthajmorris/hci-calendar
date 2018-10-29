@@ -74,7 +74,7 @@ public class GuiInit extends JFrame implements ActionListener {
    JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
    jfc.setDialogTitle("Select a textfile");
    jfc.setAcceptAllFileFilterUsed(false);
-   FileNameExtensionFilter filter = new FileNameExtensionFilter("*.json", "json");
+   FileNameExtensionFilter filter = new FileNameExtensionFilter("JSON files", "*.json", "json");
    jfc.addChoosableFileFilter(filter);
 
    int returnValue = jfc.showOpenDialog(null);
