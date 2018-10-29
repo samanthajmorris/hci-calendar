@@ -8,7 +8,7 @@
 import javax.swing.*;
 import javax.swing.filechooser.*;
 import java.awt.event.*;
-import CalendarInterface.CalendarFrame;
+import CalendarInterface.*;
 
 public class GuiInit extends JFrame implements ActionListener {
  
@@ -88,7 +88,8 @@ public class GuiInit extends JFrame implements ActionListener {
   // Submit and run calendar
   if (e.getSource() == btSubmit) {
    setVisible(false);
-   boolean [] [] availability = CalendarFrame.main();
+   CalendarPanel cal = new CalendarPanel();
+   boolean [] [] availability = cal.getAvailability();
    backend(availability, "sampleName", getPath());
   }
  }
