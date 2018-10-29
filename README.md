@@ -3,7 +3,7 @@
 
 # What is SCHEDULEME?
 
-SCHEDULEME will be providing a simpler way to navigate through the availability of your group members and figure out when you can plan your meetings. How it will work: each group member will submit their calendar, and a group leader will input a length of time needed for the meeting. The application will then output choices of proposed meeting times where everyone in the group is free, and it is up to the team leader to decide which of those meeting times they would like. 
+SCHEDULEME will be providing a simpler way to navigate through the availability of your group members and figure out when you can plan your meetings. How it works: each group member submits their calendar, and a group leader will input a length of time needed for the meeting. The application will then output choices of proposed meeting times where everyone in the group is free, and it is up to the team leader to decide which of those meeting times they would like. 
 
 This repository contains:
 
