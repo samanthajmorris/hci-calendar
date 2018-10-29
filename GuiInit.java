@@ -114,7 +114,7 @@ public class GuiInit extends JFrame implements ActionListener {
   SwingUtilities.invokeLater(new Runnable() {
    @Override
    public void run() {
-    new gui_init();
+    new GuiInit();
    }
   });
  }
