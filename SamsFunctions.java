@@ -18,11 +18,19 @@ import org.json.simple.parser.JSONParser;
 
 public class SamsFunctions {
   
-  public SamsFunctions() {
+  public String name;
+  public String num;
+  public String pathToFile;
+  
+  public SamsFunctions(String na, String n, String p) {
     //contstructor
+    String name = na;
+    String num = n;
+    String pathToFile = p;
   }
   
   public static void addEntry(String name, String num, String pathToFile){
+    System.out.println("path: " + pathToFile);
     
     Path path = Paths.get(pathToFile);
 
@@ -32,12 +40,14 @@ public class SamsFunctions {
  
         try 
         {
+          try
+          {
             //Read from the file. Take path as a variable.
             Object obj = parser.parse(new FileReader(pathToFile));
             
             //Create the JSONObject version of the file
             JSONObject jsonObject = (JSONObject) obj;
-            
+          
             //Add new entry to the JSONObject
             jsonObject.put(name, num);
             
@@ -47,6 +57,19 @@ public class SamsFunctions {
               file.write(jsonObject.toString());
               System.out.println("Successfully Copied JSON Object to File.");
             } 
+          }
+        
+          catch (Exception e)
+          {
+            JSONObject obj = new JSONObject();
+            obj.put(name, num);
+            //Write the new JSONObject to the file
+            try (FileWriter file = new FileWriter(pathToFile)) 
+            {
+              file.write(obj.toString());
+              System.out.println("Successfully Copied JSON Object to File.");
+            } 
+          }
         }
         catch (Exception e) 
         {

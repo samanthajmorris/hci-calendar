@@ -80,7 +80,7 @@ public class gui_init extends JFrame implements ActionListener {
 
    int returnValue = jfc.showOpenDialog(null);
    if (returnValue == JFileChooser.APPROVE_OPTION) {
-    System.out.println(jfc.getSelectedFile().getPath());
+    filePath = jfc.getSelectedFile().getPath();
     System.out.println(jfc.getSelectedFile().getName());
     updateFileName(jfc.getSelectedFile().getName());
    }
