@@ -25,6 +25,7 @@ public class SamsFunctions {
   public static void addEntry(String name, String num, String pathToFile){
     
     Path path = Paths.get(pathToFile);
+    System.out.println("Path: " + path);
 
     if (Files.exists(path)) {
       // file exist

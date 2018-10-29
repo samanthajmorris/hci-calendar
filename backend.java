@@ -1,4 +1,5 @@
 
+
 public class backend
 {
   public String returnString; 
@@ -26,8 +27,10 @@ public class backend
       for(int j = 0; j<36;j++)
       test2[i][j] = false;
     
-    backend sample = new backend(test, "Samantha", "/Users/samanthamorris/Documents/hci-calendar-master/sample.json");
-    backend sample2 = new backend(test2, "Aisha", "/Users/samanthamorris/Documents/hci-calendar-master/sample.json");
+    GuiInit gui = new GuiInit();
+    String path = gui.getPath();
+    backend sample = new backend(test, "Samantha", path);
+    backend sample2 = new backend(test2, "Aisha", path);
     
     SamsFunctions function = new SamsFunctions();
     System.out.println("\nAvailability: ");
