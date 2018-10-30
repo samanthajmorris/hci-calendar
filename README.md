@@ -16,7 +16,7 @@ This repository contains:
 
 1.	Download or clone the repository
 2.	This tool depends on the following Java modules: java.io, java.lang, com.google.json(provided), java.util, java.nio, org.json.simple(provided). Please ensure these modules are in your Java environment.
-	a. If you are running on Dr. Java, add the neccessary jar files to your environment by clicking Edit>Preferences> Add Classpath then browsing for you files. Once all are added, click 'Apply' then 'OK'.
+⋅⋅a.	If you are running on Dr. Java, add the neccessary jar files to your environment by clicking Edit>Preferences> Add Classpath then browsing for you files. Once all are added, click 'Apply' then 'OK'.
 
 ## How to run
 
