@@ -14,9 +14,9 @@ This repository contains:
 
 ## Getting Started
 
-1.	Download or clone the repository
-2.	This tool depends on the following Java modules: java.io, java.lang, com.google.json(provided), java.util, java.nio, org.json.simple(provided). Please ensure these modules are in your Java environment.
---a.	If you are running on Dr. Java, add the neccessary jar files to your environment by clicking Edit>Preferences> Add Classpath then browsing for you files. Once all are added, click 'Apply' then 'OK'.
+1. Download or clone the repository
+2. This tool depends on the following Java modules: java.io, java.lang, com.google.json(provided), java.util, java.nio, org.json.simple(provided). Please ensure these modules are in your Java environment.
+  a. If you are running on Dr. Java, add the neccessary jar files to your environment by clicking Edit>Preferences> Add Classpath then browsing for you files. Once all are added, click 'Apply' then 'OK'.
 
 ## How to run
 
@@ -24,7 +24,7 @@ Run Main.java, enter your name and (if you have a json file with prior results) 
 Submit and enter your **unavailable** times for the next week.
 Hit calculate when finished and the results will pop on screen for the availability of you and whoever else previously calculated on your json file.
 
-## Notes
+### Notes
 
 If no json file is initially provided, it will be stored by default in Downloads/ScheduleMe.json (tested only for Windows).
 
