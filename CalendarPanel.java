@@ -253,10 +253,13 @@ public class CalendarPanel extends JPanel
 		public void actionPerformed(ActionEvent e)
 		{
 			boolean [][] avail = getAvailability(); // array of false/true values
-			String pathToFile = gui_init.getPath(); // filepath
+			gui_init gui = new gui_init(0);
+			String pathToFile = gui.getPath(); // filepath
+			String name = gui.getName();   //name	
 			System.out.println(pathToFile); // debug stmt
+			System.out.println(name);
 			convert f = new convert();	// create convert object
-			f.backend(avail, "sampleName", pathToFile);
+			f.backend(avail, name, pathToFile);
 		}
 	}
 

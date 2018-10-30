@@ -146,6 +146,7 @@ public class SamsFunctions {
 				result = result + availability[i];
 				//System.out.print(availability[i]);
 			}
+			System.out.println(result);
 			return result;
 		}
 		catch (IOException e) {

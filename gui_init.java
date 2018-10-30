@@ -13,8 +13,9 @@ import java.awt.Color;
 public class gui_init extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
-	private JLabel lbQuestion1, lbQuestion2, lbExistingFile;
-//	public tfName;
+	private JLabel lbQuestion1, lbQuestion2, lbExistingFile, lbName;
+	public JTextField tfName;
+	public static String name;
 	private JButton btUploadFile, btSubmit;
 	private Color lime = new Color(129, 196, 43);
 	private Color maroon = new Color(234, 98, 98);
@@ -30,6 +31,12 @@ public class gui_init extends JFrame implements ActionListener {
 		p.add(lbQuestion1);
 		lbQuestion2 = new JLabel("or submit without one to create a new session.");
 		p.add(lbQuestion2);
+		
+		// enter name
+		lbName = new JLabel("What is your name?");
+		p.add(lbName);
+		tfName = new JTextField(20);
+		p.add(tfName);
 
 		// existing file label updates when file selected
 		lbExistingFile = new JLabel("Upload a file");
@@ -69,7 +76,7 @@ public class gui_init extends JFrame implements ActionListener {
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			pack();
 			setLocationRelativeTo(null);
-			setSize(410,160);
+			setSize(390,160);
 			setVisible(true);
 		}
 	}
@@ -95,13 +102,20 @@ public class gui_init extends JFrame implements ActionListener {
 		// Submit and run calendar
 		if (e.getSource() == btSubmit) {
 			setVisible(false);
+			name = tfName.getText();
+			System.out.println(name);
 			CalendarFrame.main();
 		}
 	}
 
 	// a way to get filepath from anywhere
-	public static String getPath(){
+	public String getPath(){
 		return filePath; 
+	}
+	
+	// a way to get name from anywhere
+	public String getName(){
+		return name; 
 	}
 
 	// main() method
