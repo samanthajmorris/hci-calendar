@@ -18,7 +18,7 @@ If you are running on Dr. Java, add the neccessary jar files to your environment
 Similarly, if running eclipse, right-click the project folder>Build Path>Configure Build Path, "Add External JARS...", select your files in the lib repository. Click 'Apply' then 'OK'.
 3. Run Main.java
 
-## How to run
+## How to use
 
 1. Run Main.java, enter your name and (if you have a json file with prior results) upload your json file.
 2. Submit and enter your **unavailable** times for the next week.
