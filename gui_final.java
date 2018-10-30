@@ -6,8 +6,6 @@ import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
 
-import CalendarInterface.OneWeek;
-
 public class gui_final implements ActionListener {
  public JFrame f;    // declare frame JFrame
  private JLabel lbResultExpl; // declare result_expl Label
@@ -16,7 +14,8 @@ public class gui_final implements ActionListener {
  public JPanel p;    // panel with grid layout
  private JLabel lbDay1, lbDay2, lbDay3, lbDay4, lbDay5, lbDay6, lbDay7;
  
- public gui_final() {
+ public gui_final(String inputString) 
+ {
   
   f = new JFrame("ScheduleMe final frame");
   f.setLayout(new BoxLayout(f.getContentPane(), BoxLayout.PAGE_AXIS));
@@ -49,20 +48,27 @@ public class gui_final implements ActionListener {
   String  l7 = new String();
 
   // Default. DELETE LATER
-  String  sampletimes = "<HTML>"+"6:00 AM" + " 6:30 AM" + " 7:00 AM" + " 7:30 AM" + " 8:00 AM" + " 8:30 AM" + "9:00 AM" + 
+  String  defaulttimes = "<HTML>"+"6:00 AM" + " 6:30 AM" + " 7:00 AM" + " 7:30 AM" + " 8:00 AM" + " 8:30 AM" + "9:00 AM" + 
     "9:30 AM" + "10:00 AM" +  "10:30 AM" + "11:00 AM" + "11:30 AM" + "12:00 AM" + "12:30 AM" +"1:00 PM"+ "1:30 PM" 
      + "2:00 PM"+"2:30 PM"+ "3:00 PM"+"3:30 PM"+ "4:00 PM"+ "4:30 PM"+"5:00 PM"+"5:30 PM"+ "6:00 PM"+ "6:30 PM"+
     "7:00 PM"+ "7:30 PM"+ "8:00 PM"+ "8:30 PM"+ "9:00 PM"+ "9:30 PM"+ "10:00 PM"+ "10:30 PM"+"11:00 PM"+ 
     "11:30 PM"+"<HTML>";
   
-  String times1 = "6:00 AM";
-  String times2 = "6:00 AM";
-  String times3 = "6:00 AM";
-  String times4 = "6:00 AM";
-  String times5 = "6:00 AM";
-  String times6 = "6:00 AM";
-  String times7 = "6:00 AM";
+  String[] times = { "6:00 AM", "6:30 AM", "7:00 AM", "7:30 AM","8:00 AM", "8:30 AM","9:00 AM", 
+  "9:30 AM","10:00 AM", "10:30 AM","11:00 AM","11:30 AM", "12:00 AM", "12:30 AM", "1:00 PM", "1:30 PM", 
+  "2:00 PM","2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM",
+  "7:00 PM", "7:30 PM", "8:00 PM", "8:30 PM", "9:00 PM", "9:30 PM", "10:00 PM", "10:30 PM","11:00 PM", 
+  "11:30 PM"}; 
   
+  
+  /*String times1 = convertbintotime(inputString, 0, times); 
+  String times2 = convertbintotime(inputString, 1, times);
+  String times3 = convertbintotime(inputString, 2, times);
+  String times4 = convertbintotime(inputString, 3, times);
+  String times5 = convertbintotime(inputString, 4, times); 
+  String times6 = convertbintotime(inputString, 5, times); 
+  String times7 = convertbintotime(inputString, 6, times); 
+  */
   l1 = week.get_month(0) + " " + week.get_day_of_month(0) + " " + week.get_year(0);
   l2 = week.get_month(1) + " " + week.get_day_of_month(1) + " " + week.get_year(1);
   l3 = week.get_month(2) + " " + week.get_day_of_month(2) + " " + week.get_year(2);
@@ -82,13 +88,22 @@ public class gui_final implements ActionListener {
   
 
   // The available times for each of the days.
-  JLabel timel1 = new JLabel(sampletimes);
-  JLabel timel2 = new JLabel(sampletimes);
-  JLabel timel3 = new JLabel(sampletimes);
-  JLabel timel4 = new JLabel(sampletimes);
-  JLabel timel5 = new JLabel(sampletimes);
-  JLabel timel6 = new JLabel(sampletimes);
-  JLabel timel7 = new JLabel(sampletimes);
+  /*JLabel timel1 = new JLabel(times1);
+  JLabel timel2 = new JLabel(times2);
+  JLabel timel3 = new JLabel(times3);
+  JLabel timel4 = new JLabel(times4);
+  JLabel timel5 = new JLabel(times5);
+  JLabel timel6 = new JLabel(times6);
+  JLabel timel7 = new JLabel(times7);
+  */
+  
+  JLabel timel1 = new JLabel(defaulttimes);
+  JLabel timel2 = new JLabel(defaulttimes);
+  JLabel timel3 = new JLabel(defaulttimes);
+  JLabel timel4 = new JLabel(defaulttimes);
+  JLabel timel5 = new JLabel(defaulttimes);
+  JLabel timel6 = new JLabel(defaulttimes);
+  JLabel timel7 = new JLabel(defaulttimes);
   
   lbDay1.setFont(dateFont);
   lbDay2.setFont(dateFont);
@@ -160,9 +175,33 @@ public class gui_final implements ActionListener {
    System.exit(0);
   }
  }
+ public String convertbintotime(String bin, int day, String[] times)
+  {
+    String ret_times = new String();
+    int increments = 36;
+    int start, end;
+    if (bin.length() != 252)
+    {
+      System.out.println("Invalid length!");
+      return null;
+    }
+    start = increments * day;
+    end = increments * (day + 1);
+    ret_times = "<HTML>";
+    for ( int i = start; i < end; i++)
+    {
+      if (bin.charAt(i) == '1')
+      {
+          ret_times += times[i] + "  ";
+      }
+
+    }      
+    ret_times += "<HTML>";
+    return ret_times;
+  }
  
- // main() method
+ /*// main() method
  public static void main(String args[]) {
   new gui_final();
- }
+ }*/
 }
