@@ -2,7 +2,7 @@
 
 ## What is SCHEDULEME?
 
-SCHEDULEME will be providing a simpler way to navigate through the availability of your group members and figure out when you can plan your meetings. People are more likely to know when they are busy and they have to think more to know when they are free, so with SCEDULEME they can submit when they are busy, rather than when they are free. With the inclusion of colour to help with readability and understanding, and the ability to deselect, select and resubmit your times, SCHEDULEME is a simple and effective way to figure out the best time for your group to meet.<br>
+SCHEDULEME will be providing a simpler way to navigate through the availability of your group members and figure out when you can plan your meetings. People are more likely to know when they are busy and they have to think more to know when they are free, so with SCHEDULEME they can submit when they are busy, rather than when they are free. With the inclusion of colour to help with readability and understanding, and the ability to deselect, select and resubmit your times, SCHEDULEME is a simple and effective way to figure out the best time for your group to meet.<br>
 How it works: each group member submits their name and the shared json file (assuming one has already been created) and selects their **unavailability** for the next week. The application will then output choices of proposed meeting times where everyone in the group is free. It is up to the team to decide which of those times they would like. 
 
 This repository contains:
