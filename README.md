@@ -2,7 +2,7 @@
 
 ## What is SCHEDULEME?
 
-SCHEDULEME will be providing a simpler way to navigate through the availability of your group members and figure out when you can plan your meetings.<br>
+SCHEDULEME will be providing a simpler way to navigate through the availability of your group members and figure out when you can plan your meetings. People are more likely to know when they are busy, they have to think more to know when they are free, so with SCEDULEME they can submit when they are busy, rather than when they are free. With the inclusion of colour to help with readability and understanding, and the ability to deselect,select and resubmit your times, SCHEDULEME is a simple and effective way to figure out the best time for your group to meet.<br>
 How it works: each group member submits their name and the shared json file (assuming one has already been created) and selects their **unavailability** for the next week. The application will then output choices of proposed meeting times where everyone in the group is free. It is up to the team to decide which of those times they would like. 
 
 This repository contains:
@@ -13,7 +13,7 @@ This repository contains:
 ## Getting Started
 
 1. Download or clone the repository.
-2. This tool depends on the following Java modules: java.io, java.lang, com.google.json(provided), java.util, java.nio, org.json.simple(provided). Please ensure these modules are in your Java environment.<br>
+2. This tool depends on the following Java modules: java.io, java.lang, com.google.json(provided), java.util, java.nio, org.json.simple(provided). Please ensure these modules are in your Java environment.  Most of the modules you would need should already be included in your Java library, but you may have to add a few which are included in the lib folder.<br>
 	- If you are running in Dr. Java, add the necessary jar files to your environment by clicking Edit>Preferences>Add Classpath, then browsing for your files in the lib repository. Once all are added, click 'Apply' then 'OK'.<br>
 	- Similarly, if running in eclipse, right-click the project folder>Build Path>Configure Build Path, "Add External JARS...", select your files in the lib repository. Click 'Apply' then 'OK'.
 3. Run Main.java
