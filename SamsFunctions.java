@@ -22,7 +22,7 @@ public class SamsFunctions {
 	public String pathToFile;
 
 	public SamsFunctions(String na, String n, String p) {
-		//contstructor
+		//constructor
 		String name = na;
 		String num = n;
 		String pathToFile = p;
@@ -31,8 +31,10 @@ public class SamsFunctions {
 	public static void addEntry(String name, String num, String pathToFile){
 		//System.out.println("path: " + pathToFile);
 
-		if (pathToFile == null)
-			pathToFile = "C:\\Users\\keara\\workspace\\sample.json";
+		if (pathToFile == null) {
+			String home = System.getProperty("user.home");
+			pathToFile = home + "/Downloads/ScheduleMe.json";
+		}
 		//System.out.println("path: " + pathToFile);	// debug stmt
 
 		Path path = Paths.get(pathToFile);

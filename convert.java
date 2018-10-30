@@ -90,11 +90,14 @@ public class convert
 		//convert newCon = new convert();
 		String returnString = convertArray(array); // convert from true/false array to 1s&0s
 		System.out.println(returnString);	// debug stmt
-
+		
 		SamsFunctions func = new SamsFunctions(name, returnString, path);
 		func.addEntry(name, returnString, path); 
 		
 		if (path != null)
-			func.calculate(path);
+			returnString = func.calculate(path);
+		
+		gui_init final_gui = new gui_init(0);
+		final_gui.displayFinal(returnString);
 	}
 }

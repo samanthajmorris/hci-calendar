@@ -117,6 +117,12 @@ public class gui_init extends JFrame implements ActionListener {
 	public String getName(){
 		return name; 
 	}
+	
+	// makes the calendar go away and the displays the final results of the calculations
+	public void displayFinal(String ret) {
+		CalendarFrame.setInvisible();
+		new gui_final(ret);
+	}
 
 	// main() method
 	public static void main(String[] args) {
