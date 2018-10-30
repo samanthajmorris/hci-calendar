@@ -1,11 +1,10 @@
 /*
- *Name: convert:java                              Author: Aishat Mohammed
+ * Name:	convert:java
+ * Author:	Aisha Mohammed
  *
- *
- *Converts Array form for availability to String format and vice versa. 
- *The times are 6 am to 12am per day for a week.
+ * Purpose:	Converts Array form for availability to String format and vice versa. 
+ *			The times are 6 am to 12am per day for a week.
  */
-import java.util.*;
 
 public class convert
 {
@@ -18,13 +17,11 @@ public class convert
 		dates = new String();
 	}
 
-	/*Name: convertString
-	 *parameters: String parameter of length 252
-	 *returns: 7 by 36 boolean array
+	/* Name:		convertString
+	 * Parameters:	String parameter of length 252
+	 * Returns:		7 by 36 boolean array
 	 *
-	 *description: converts String to a 7 by 36 array
-	 */
-
+	 * Description:	converts String to a 7 by 36 array */
 	public boolean[][] convertString(String data)
 	{   
 		int len = data.length();
@@ -58,12 +55,11 @@ public class convert
 		return dateArray;
 	}
 
-	/*Name: convertArray
-	 *parameters: 7 by 36 boolean array
-	 *returns: String parameter of length 252
+	/* Name:		convertArray
+	 * Parameters:	7 by 36 boolean array
+	 * Returns:		String parameter of length 252
 	 *
-	 *description: converts 7 by 36 array to a  String
-	 */
+	 * Description:	converts 7 by 36 array to a  String */
 	public String convertArray(boolean[][] booldateArray)
 	{
 		for(int i = 0; i < 7; i++)
@@ -73,7 +69,6 @@ public class convert
 					dates += "1";
 				else if(booldateArray[i][j] == false)
 				{
-					//System.out.println("The date is false");
 					dates += "0";
 				}
 				else
@@ -85,19 +80,18 @@ public class convert
 
 		return dates;
 	}
+	
 	public void backend(boolean [][] array, String name, String path)
 	{
-		//convert newCon = new convert();
-		String returnString = convertArray(array); // convert from true/false array to 1s&0s
-		System.out.println(returnString);	// debug stmt
+		String returnString = convertArray(array);	// convert from true/false array to 1s&0s
 		
 		SamsFunctions func = new SamsFunctions(name, returnString, path);
-		func.addEntry(name, returnString, path); 
+		func.addEntry(name, returnString, path);	// add user info to json file
 		
 		if (path != null)
-			returnString = func.calculate(path);
+			returnString = func.calculate(path);	// calculate availability for entire json content
 		
 		gui_init final_gui = new gui_init(0);
-		final_gui.displayFinal(returnString);
+		final_gui.displayFinal(returnString);		// displays final results
 	}
 }

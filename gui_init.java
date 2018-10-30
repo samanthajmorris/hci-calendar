@@ -1,8 +1,9 @@
 /*
- * File Name: gui_init.java
- * Author:    Keara Leibovitz
- * Purpose:   Creates the initial gui that you see on screen. Runs the calendar gui on submit.
- * Date:      October 26, 2018
+ * File Name:	gui_init.java
+ * Author:		Keara Leibovitz
+ * Purpose:		Creates the initial GUI that you see on screen. Runs the calendar GUI on submit.
+ * 				Contains getter methods for public variables needed in backend calculations.
+ * Date:		October 26, 2018
  */
 
 import javax.swing.*;
@@ -53,7 +54,6 @@ public class gui_init extends JFrame implements ActionListener {
 		// Submit all
 		btSubmit = new JButton("Submit");
 		p.add(btSubmit);
-
 		// Submit action
 		btSubmit.addActionListener((ActionListener) this);
 	}
@@ -80,6 +80,7 @@ public class gui_init extends JFrame implements ActionListener {
 			setVisible(true);
 		}
 	}
+	
 	// ActionEvent handler
 	public void actionPerformed(ActionEvent e) {
 		// Upload a file
@@ -92,9 +93,8 @@ public class gui_init extends JFrame implements ActionListener {
 
 			int returnValue = jfc.showOpenDialog(null);
 			if (returnValue == JFileChooser.APPROVE_OPTION) {
-				System.out.println(jfc.getSelectedFile().getPath());
+				// set file path for backend use
 				filePath = jfc.getSelectedFile().getPath();
-				System.out.println(jfc.getSelectedFile().getName());
 				// update JPanel with filename
 				updateFileName(jfc.getSelectedFile().getName());
 			}
@@ -108,13 +108,13 @@ public class gui_init extends JFrame implements ActionListener {
 		}
 	}
 
-	// a way to get filepath from anywhere
-	public String getPath(){
+	// a way to get file path from anywhere
+	public String getPath() {
 		return filePath; 
 	}
 	
-	// a way to get name from anywhere
-	public String getName(){
+	// a way to get user name from anywhere
+	public String getName() {
 		return name; 
 	}
 	

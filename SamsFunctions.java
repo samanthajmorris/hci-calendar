@@ -1,6 +1,19 @@
+/*
+ * File Name:	SamsFunctions.java
+ * Author:		Samantha Morris
+ * Purpose:		Adds user entries to
+ * 				a) a new file, ScheduleMe.json (if none provided), located in
+ * 					the user's Download directory
+ * 				b) the file provided (at its original location)
+ * 				
+ * 				Compares and calculates the results of each entry (user) and
+ * 				determines common availability.
+ * 
+ * Date:		October 27, 2018
+ */
+
 import java.io.FileWriter;
 import java.io.IOException;
-//import org.json.JSONObject;
 import java.lang.reflect.Type;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
@@ -8,9 +21,7 @@ import java.util.HashMap;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.Path;
-//import java.io.IOException;
 import java.io.FileReader;
-//import java.util.Iterator;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -28,16 +39,14 @@ public class SamsFunctions {
 		String pathToFile = p;
 	}
 
-	public static void addEntry(String name, String num, String pathToFile){
-		//System.out.println("path: " + pathToFile);
-
+	public static void addEntry(String name, String num, String pathToFile) {
 		if (pathToFile == null) {
 			String home = System.getProperty("user.home");
+			
 			/* Change the next line if you wish
 			 * to hard code your own path variable */
 			pathToFile = home + "/Downloads/ScheduleMe.json";
 		}
-		//System.out.println("path: " + pathToFile);	// debug stmt
 
 		Path path = Paths.get(pathToFile);
 
@@ -49,16 +58,16 @@ public class SamsFunctions {
 			{
 				try
 				{
-					//Read from the file. Take path as a variable.
+					// Read from the file. Take path as a variable.
 					Object obj = parser.parse(new FileReader(pathToFile));
 
-					//Create the JSONObject version of the file
+					// Create the JSONObject version of the file
 					JSONObject jsonObject = (JSONObject) obj;
 					System.out.println("before: " + jsonObject.toString());
 					
 					jsonObject.put(name, num);
 					System.out.println("after:"+jsonObject.toString());
-					//Write the new JSONObject to the file
+					// Write the new JSONObject to the file
 					try (FileWriter file = new FileWriter(pathToFile)) 
 					{
 						file.write(jsonObject.toString());
@@ -97,7 +106,6 @@ public class SamsFunctions {
 			{
 				file.write(obj.toString());
 				System.out.println("Successfully Created and Copied JSON Object to File...");
-				//System.out.println("\nJSON Object: " + obj); 
 			}
 			catch (Exception e) 
 			{
@@ -112,25 +120,23 @@ public class SamsFunctions {
 	public static String calculate(String pathToFile){
 		try
 		{
-			//System.out.println(pathToFile);
-			//Read in the contents from the file
+			// Read in the contents from the file
 			String contents = new String(Files.readAllBytes(Paths.get(pathToFile))); 
 
-			//Convert the file to a Hashmap in order to do things
+			// Convert the file to a Hashmap in order to do things
 			Gson gson = new Gson();
 			Type type = new TypeToken<HashMap<String, String>>(){}.getType();
 			HashMap<String, String> myMap = gson.fromJson(contents, type);
-			//System.out.println("Here are your entries: ");
-			//System.out.println(myMap);
-
-			//Instantiate array of all 1's. Change 5 to 252.
+			
+			// Instantiate array of all 1's. Change 5 to 252.
 			int[] availability = new int[252];
 			for (int i = 0; i < availability.length; i++)
 			{
 				availability[i] = 1;
 			}
 
-			//For each digit associated with each name, iterate through the number. If the digit is a 0, change the availability array 
+			// For each digit associated with each name, iterate through the number.
+			// If the digit is a 0, change the availability array.
 			for (Object value : myMap.values()) 
 			{
 				String number = value.toString();
@@ -143,14 +149,12 @@ public class SamsFunctions {
 				}
 
 			}
-			//System.out.println("Availability: ");
+
 			String result = "";
 			for (int i = 0; i < availability.length; i++)
 			{ 
 				result = result + availability[i];
-				//System.out.print(availability[i]);
 			}
-			System.out.println(result);
 			return result;
 		}
 		catch (IOException e) {
@@ -160,7 +164,8 @@ public class SamsFunctions {
 	}
 
 
-
+	// Runs some sample input.
+	// For debugging purposes only.
 //	public static void main(String[] args) throws IOException {
 //		String pathy = "/Users/keara/workspace/sample.json";
 //
@@ -172,6 +177,7 @@ public class SamsFunctions {
 //		System.out.println("Availability: ");
 //		System.out.println(calculate(pathy));
 //	}
+	
 }
 
 

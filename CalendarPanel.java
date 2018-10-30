@@ -1,13 +1,13 @@
 /*
- * File Name: CalendarPanel.java
- * Author:    Vistassja Williams
- * Purpose:   This is the class that contains the buttons that represent the actual days in a 
- *            calendar.
- * Date:      October 23, 2018
+ * File Name:	CalendarPanel.java
+ * Author:		Vistassja Williams
+ * Purpose:		This is the class that contains the buttons that represent the actual days in a 
+ * 				calendar.
+ * Date:		October 23, 2018
  * 
- * Notes: The code pertaining to the ComboCheckBoxes was found online at the following link:
- *        https://stackoverflow.com/questions/37175123/creating-jcombobox-with-checkboxes 
- *        by StackOverflow user aterai on May 12 2016 at 5:19 AM.
+ * Notes:	The code pertaining to the ComboCheckBoxes was found online at the following link:
+ * 			https://stackoverflow.com/questions/37175123/creating-jcombobox-with-checkboxes 
+ * 			by StackOverflow user aterai on May 12 2016 at 5:19 AM.
  * 
  */
 
@@ -20,8 +20,7 @@ import java.util.stream.Collectors;
 import javax.accessibility.*;
 import javax.swing.plaf.basic.*;
 
-public class CalendarPanel extends JPanel
-{ 
+public class CalendarPanel extends JPanel { 
 	private static final long serialVersionUID = 1L;
 	private JButton b1, b2, b3, b4, b5, b6, b7;
 	private JButton calculate;
@@ -42,8 +41,7 @@ public class CalendarPanel extends JPanel
 			"7:00 PM", "7:30 PM", "8:00 PM", "8:30 PM", "9:00 PM", "9:30 PM", "10:00 PM", "10:30 PM","11:00 PM", 
 	"11:30 PM"}; 
 
-	public CalendarPanel()
-	{ 
+	public CalendarPanel() { 
 		Font buttonFont = new Font("Courier", Font.PLAIN, 20);   // This is the Font of the Weekdays and the Buttons.
 		Font calcfont = new Font("Courier", Font.PLAIN, 14);
 		Font instructionsFont = new Font("Leelawadee UI", Font.ITALIC, 16);
@@ -51,7 +49,7 @@ public class CalendarPanel extends JPanel
 		Dimension buttondim = new Dimension(75,50);  // The dimension of each button. 
 		Dimension labeldim = new Dimension(1000, 50); // dimension of the instructions label
 		String label = "Add times by clicking the drop down box under each day and ticking the checkboxes " +
-				"corresponding to the times you are not available.";
+				"corresponding to the times you are <HTML><em>not available</em><HTML>.";
 		String label_ext = "Once you are all done, click Calculate.";
 		instructions = new JLabel(label);
 		instructions.setFont(instructionsFont);
@@ -82,8 +80,7 @@ public class CalendarPanel extends JPanel
 		CheckableItem[] m6 = new CheckableItem[times.length]; 
 		CheckableItem[] m7 = new CheckableItem[times.length]; 
 
-		for (int i = 0; i < times.length; i++)
-		{
+		for (int i = 0; i < times.length; i++) {
 			// set each checkable item to be all of the elements of time array and to be unchecked.
 			m1[i] = new CheckableItem(times[i],false);  
 			m2[i] = new CheckableItem(times[i],false);
@@ -94,7 +91,7 @@ public class CalendarPanel extends JPanel
 			m7[i] = new CheckableItem(times[i],false);                           
 		}         
 
-		// Let's start the id's at zero for availability computation sake.
+		// Start the id's at zero for availability computation sake.
 		timeBoxSun = new JComboCheckBox<CheckableItem>(m1 , 0); 
 		timeBoxMon = new JComboCheckBox<CheckableItem>(m2 , 1);
 		timeBoxTues = new JComboCheckBox<CheckableItem>(m3, 2);
@@ -142,10 +139,8 @@ public class CalendarPanel extends JPanel
 		add(instructions_ext);
 
 		// Initializing the availability to all true, or all available.
-		for (int i = 0; i < 7; i++) // 7 days
-		{
-			for (int j = 0; j < 36; j++) // 36 hours
-			{
+		for (int i = 0; i < 7; i++) {		// 7 days
+			for (int j = 0; j < 36; j++) {	// 36 half-hour segments
 				availability[i][j] = true;
 			}
 		}
@@ -156,45 +151,43 @@ public class CalendarPanel extends JPanel
 	public void doButtonPlacements(int[] placements)
 	{
 		int xplacement;
-		int yplacement = 50; // We will start at this y.
+		int yplacement = 50;	// We will start at this y.
 		int index;
 
 		// Gets the current size of each JButton. Will only have to do
 		// this once since they all are the same size.
-		Dimension buttonsize = b1.getPreferredSize(); // size of the buttons
-		Dimension boxSize = new Dimension(100,25); //size of the time drop down Boxes
-		Dimension calcdim = calculate.getPreferredSize(); // size of the calculate button
-		Dimension labeldim = instructions.getPreferredSize(); // size of the instruction label
+		Dimension buttonsize = b1.getPreferredSize();			// size of the buttons
+		Dimension boxSize = new Dimension(100,25);				// size of the time drop down Boxes
+		Dimension calcdim = calculate.getPreferredSize();		// size of the calculate button
+		Dimension labeldim = instructions.getPreferredSize();	// size of the instruction label
 		int calculate_placement = 0;
 
 		index = week.get_day_of_week(0);
 		xplacement = placements[index - 1];
-		b1.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height); // Sunday 
+		b1.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height);	// Sunday 
 		// Set bounds of the checkable box.
 		timeBoxSun.setBounds(xplacement, yplacement + 55, boxSize.width, boxSize.height);     
-		// If the previous index was the last day of the week, the next few buttons will have to go on the 
-		// next line.
-		if(index == 7) 
-		{
+		// If the previous index was the last day of the week, the next few buttons will have
+		// to go on the next line.
+		if (index == 7) {
 			calculate_placement = xplacement;
 			yplacement = 150;
 		}
 
 		index = week.get_day_of_week(1);
 		xplacement = placements[index - 1];
-		b2.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height); // Monday    
+		b2.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height);	// Monday    
 		timeBoxMon.setBounds(xplacement, yplacement + 55, boxSize.width, boxSize.height);
-		if(index == 7) 
-		{
+		if (index == 7) {
 			calculate_placement = xplacement;
 			yplacement = 150;
 		}
 
 		index = week.get_day_of_week(2);
 		xplacement = placements[index - 1];
-		b3.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height); // Tuesday
+		b3.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height);	// Tuesday
 		timeBoxTues.setBounds(xplacement, yplacement + 55, boxSize.width, boxSize.height);
-		if(index == 7) 
+		if (index == 7) 
 		{
 			calculate_placement = xplacement;
 			yplacement = 150;
@@ -202,40 +195,36 @@ public class CalendarPanel extends JPanel
 
 		index = week.get_day_of_week(3);
 		xplacement = placements[index - 1];
-		b4.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height); // Wednesday 
+		b4.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height);	// Wednesday 
 		timeBoxWed.setBounds(xplacement, yplacement + 55, boxSize.width, boxSize.height); 
-		if(index == 7) 
-		{
+		if (index == 7) {
 			calculate_placement = xplacement;
 			yplacement = 150;
 		}
 
 		index = week.get_day_of_week(4);
 		xplacement = placements[index - 1];
-		b5.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height); // Thursday 
+		b5.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height);	// Thursday 
 		timeBoxThurs.setBounds(xplacement, yplacement + 55, boxSize.width, boxSize.height);
-		if(index == 7) 
-		{
+		if (index == 7) {
 			calculate_placement = xplacement;
 			yplacement = 150;
 		}
 
 		index = week.get_day_of_week(5);
 		xplacement = placements[index - 1];
-		b6.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height); // Friday 
+		b6.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height);	// Friday 
 		timeBoxFri.setBounds(xplacement, yplacement + 55, boxSize.width, boxSize.height);
-		if(index == 7) 
-		{
+		if (index == 7) {
 			calculate_placement = xplacement;
 			yplacement = 150;
 		}
 
 		index = week.get_day_of_week(6);
 		xplacement = placements[index - 1];
-		b7.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height); // Saturday
+		b7.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height);	// Saturday
 		timeBoxSat.setBounds(xplacement, yplacement + 55, boxSize.width, boxSize.height);
-		if(index == 7) 
-		{
+		if (index == 7) {
 			calculate_placement = xplacement;
 			yplacement = 150;
 		}
@@ -246,30 +235,25 @@ public class CalendarPanel extends JPanel
 
 	}
 
-	// The action listener for the calculate button. Basically will call the 
-	// backend for all of it's calculations.
-	private class CalculateActionListener implements ActionListener
-	{
-		public void actionPerformed(ActionEvent e)
-		{
-			boolean [][] avail = getAvailability(); // array of false/true values
+	// The action listener for the calculate button. Will call the 
+	// backend for all of its calculations.
+	private class CalculateActionListener implements ActionListener	{
+		public void actionPerformed(ActionEvent e) {
+			boolean [][] avail = getAvailability();	// array of false/true values
 			gui_init gui = new gui_init(0);
-			String pathToFile = gui.getPath(); // filepath
-			String name = gui.getName();   //name	
-			System.out.println(pathToFile); // debug stmt
-			System.out.println(name);
-			convert f = new convert();	// create convert object
+			String pathToFile = gui.getPath();		// filepath
+			String name = gui.getName();			// name
+			convert f = new convert();				// create convert object
 			f.backend(avail, name, pathToFile);
 		}
 	}
 
 
-	// Whenever the user pressed the checkbox they are toggling the value of their availibility.
+	// Whenever the user pressed the checkbox they are toggling the value of their availability.
 	// When they check the check box, they are indicating they are not available, so we change that
 	// value to false.  If they uncheck it (they changed their mind) the value should currently be 
 	// false so we change it back to true.
-	private void toggleAvailability(int dayIndex, int timeIndex)
-	{
+	private void toggleAvailability(int dayIndex, int timeIndex) {
 		if (availability[dayIndex][timeIndex])
 			availability[dayIndex][timeIndex] = false;
 		else
@@ -277,18 +261,15 @@ public class CalendarPanel extends JPanel
 	}
 
 	// returns the current state of the availability array.
-	public boolean[][] getAvailability()
-	{
+	public boolean[][] getAvailability() {
 		return availability;
 	}
 
 	// Contains a string and a boolean value.
-	class CheckableItem 
-	{
+	class CheckableItem {
 		public final String text;
 		public boolean selected;
-		protected CheckableItem(String text, boolean selected) 
-		{
+		protected CheckableItem(String text, boolean selected) {
 			this.text = text;
 			this.selected = selected;
 		}
@@ -304,30 +285,25 @@ public class CalendarPanel extends JPanel
 				boolean isSelected, boolean cellHasFocus) 
 		{
 			ListModel model = list.getModel();
-			if (index < 0) 
-			{
+			if (index < 0) {
 				label.setText(getDataStringRepresentation(model));
 				return label;
 			} 
-			else 
-			{
+			else {
 				check.setText(Objects.toString(value, "null"));
 				check.setSelected(value.selected);
-				if (isSelected) 
-				{
+				if (isSelected) {
 					check.setBackground(list.getSelectionBackground());
 					check.setForeground(list.getSelectionForeground());
 				} 
-				else 
-				{
+				else {
 					check.setBackground(list.getBackground());
 					check.setForeground(list.getForeground());
 				}
 				return check;
 			}
 		}
-		private String getDataStringRepresentation(ListModel model) 
-		{
+		private String getDataStringRepresentation(ListModel model) {
 			List<String> sl = new ArrayList<>();
 			for (int i = 0; i < model.getSize(); i++) {
 				Object o = model.getElementAt(i);
@@ -339,56 +315,51 @@ public class CalendarPanel extends JPanel
 		}
 	}
 
-	class JComboCheckBox<E extends CheckableItem> extends JComboBox<E> 
-	{
+	class JComboCheckBox<E extends CheckableItem> extends JComboBox<E> {
 		private static final long serialVersionUID = 1L;
 		private boolean shouldntClose;
 		private transient ActionListener listener;
-		private int id; // This tells us which box it is.
-		public JComboCheckBox() 
-		{
+		private int id;		// This tells us which box it is.
+		
+		public JComboCheckBox() {
 			super();
 		}
 
-		public JComboCheckBox(E[] m, int identification) 
-		{
+		public JComboCheckBox(E[] m, int identification) {
 			super(m);
 			id = identification;
 		}
 
-		@Override public Dimension getPreferredSize() 
-		{
+		@Override
+		public Dimension getPreferredSize() {
 			return new Dimension(200, 20);
 		}
-		public int getId()
-		{
+		public int getId() {
 			return id;
 		}
 
-		@Override public void updateUI() 
-		{
+		@Override
+		public void updateUI() {
 			setRenderer(null);
 			removeActionListener(listener);
 			super.updateUI();
-			listener = e -> 
-			{// determines whether a checkbox was selected.
-				if (e.getModifiers() == InputEvent.BUTTON1_MASK) 
-				{
+			listener = e -> {
+				// determines whether a checkbox was selected.
+				if (e.getModifiers() == InputEvent.BUTTON1_MASK) {
 					System.out.println(" Box: " + getId() + ", time selected: " + times[getSelectedIndex()]);
 					toggleAvailability(getId(),getSelectedIndex());  
 					updateItem(getSelectedIndex());
 					shouldntClose = true;
 				}
 			};
+			
 			setRenderer(new CheckBoxCellRenderer<CheckableItem>());
 			addActionListener(listener);
 			getInputMap(JComponent.WHEN_FOCUSED).put(
 					KeyStroke.getKeyStroke(KeyEvent.VK_SPACE, 0), "space-key-select");
-			getActionMap().put("space-key-select", new AbstractAction() 
-			{
+			getActionMap().put("space-key-select", new AbstractAction()	{
 				private static final long serialVersionUID = 1L;
-				@Override public void actionPerformed(ActionEvent e) 
-				{
+				@Override public void actionPerformed(ActionEvent e) {
 					System.out.println("JComboBox#getSelectedIndex()" + getSelectedIndex());
 					Accessible a = getAccessibleContext().getAccessibleChild(0);
 					if (a instanceof BasicComboPopup) {

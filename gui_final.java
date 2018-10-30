@@ -1,24 +1,24 @@
-/*import java.awt.Component;
-import java.awt.GridLayout;
-import java.awt.event.*;
+/*
+ * File Name:	Main.java
+ * Authors:		Keara Leibovitz, Vistassja Williams
+ * Purpose:		Runs gui_init, which in turn runs CalendarFrame on Submit,
+ * 				which in turn runs gui_final to display results and saves
+ * 				the new results to ScheduleMe.json.
+ * Date:		October 30, 2018
  */
 import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
 
 public class gui_final implements ActionListener {
-	public JFrame f;    // declare frame JFrame
-	private JLabel lbResultExpl; // declare result_expl Label
-	private JTextArea taResults; // declare results TextField
-	private JButton btExit;   // declare exit button
-	public JPanel p;    // panel with grid layout
+	public JFrame f;				// declare frame JFrame
+	private JLabel lbResultExpl;	// declare result_expl Label
+	private JButton btExit;			// declare exit button
+	public JPanel p;				// panel with grid layout
 	private JLabel lbDay1, lbDay2, lbDay3, lbDay4, lbDay5, lbDay6, lbDay7;
 
 	public gui_final(String inputString) 
 	{
-		System.out.println(inputString);
-		System.out.println(inputString.length());
-
 		f = new JFrame("ScheduleMe final frame");
 		f.setLayout(new BoxLayout(f.getContentPane(), BoxLayout.PAGE_AXIS));
 		Font font = new Font("Leelawadee UI", Font.PLAIN, 14);
@@ -50,11 +50,11 @@ public class gui_final implements ActionListener {
 		String  l7 = new String();
 
 		// Default. DELETE LATER
-//		String  defaulttimes = "<HTML>"+"6:00 AM" + " 6:30 AM" + " 7:00 AM" + " 7:30 AM" + " 8:00 AM" + " 8:30 AM" + "9:00 AM" + 
-//				"9:30 AM" + "10:00 AM" +  "10:30 AM" + "11:00 AM" + "11:30 AM" + "12:00 AM" + "12:30 AM" +"1:00 PM"+ "1:30 PM" 
-//				+ "2:00 PM"+"2:30 PM"+ "3:00 PM"+"3:30 PM"+ "4:00 PM"+ "4:30 PM"+"5:00 PM"+"5:30 PM"+ "6:00 PM"+ "6:30 PM"+
-//				"7:00 PM"+ "7:30 PM"+ "8:00 PM"+ "8:30 PM"+ "9:00 PM"+ "9:30 PM"+ "10:00 PM"+ "10:30 PM"+"11:00 PM"+ 
-//				"11:30 PM"+"<HTML>";
+		//		String  defaulttimes = "<HTML>"+"6:00 AM" + " 6:30 AM" + " 7:00 AM" + " 7:30 AM" + " 8:00 AM" + " 8:30 AM" + "9:00 AM" + 
+		//				"9:30 AM" + "10:00 AM" +  "10:30 AM" + "11:00 AM" + "11:30 AM" + "12:00 AM" + "12:30 AM" +"1:00 PM"+ "1:30 PM" 
+		//				+ "2:00 PM"+"2:30 PM"+ "3:00 PM"+"3:30 PM"+ "4:00 PM"+ "4:30 PM"+"5:00 PM"+"5:30 PM"+ "6:00 PM"+ "6:30 PM"+
+		//				"7:00 PM"+ "7:30 PM"+ "8:00 PM"+ "8:30 PM"+ "9:00 PM"+ "9:30 PM"+ "10:00 PM"+ "10:30 PM"+"11:00 PM"+ 
+		//				"11:30 PM"+"<HTML>";
 
 		String[] times = { "6:00 AM", "6:30 AM", "7:00 AM", "7:30 AM","8:00 AM", "8:30 AM","9:00 AM", 
 				"9:30 AM","10:00 AM", "10:30 AM","11:00 AM","11:30 AM", "12:00 AM", "12:30 AM", "1:00 PM", "1:30 PM", 
@@ -177,9 +177,9 @@ public class gui_final implements ActionListener {
 			System.exit(0);
 		}
 	}
+	
 	public String convertbintotime(String bin, int day, String[] times)
 	{
-		System.out.println(bin);
 		String ret_times = new String();
 		int increments = 36;
 		int start, end;
@@ -190,14 +190,11 @@ public class gui_final implements ActionListener {
 		}
 		start = increments * day;
 		end = increments * (day + 1);
-		System.out.println("Start is " + start+ " On day" + day);
-		System.out.println("End is " + end+ " On day" + day);
 		ret_times = "<HTML>";
 		for ( int i = start; i < end; i++)
 		{
 			if (bin.charAt(i) == '1')
 			{
-//				System.out.println("I is: " +i);
 				ret_times += times[i % 36] + "  ";
 			}
 
@@ -206,8 +203,8 @@ public class gui_final implements ActionListener {
 		return ret_times;
 	}
 
-	/*// main() method
- public static void main(String args[]) {
-  new gui_final();
- }*/
+	// main() method
+//	public static void main(String args[]) {
+//		new gui_final();
+//	}
 }

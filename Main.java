@@ -1,8 +1,9 @@
 /*
  * File Name:	Main.java
  * Author:		Keara Leibovitz
- * Purpose:		Runs gui_init. Which in turn runs CalendarFrame on Submit.
- * 				Which in turn runs gui_final to display results.
+ * Purpose:		Runs gui_init, which in turn runs CalendarFrame on Submit,
+ * 				which in turn runs gui_final to display results and saves
+ * 				the new results to ScheduleMe.json.
  * Date:		October 30, 2018
  */
 
