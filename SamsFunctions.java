@@ -33,6 +33,8 @@ public class SamsFunctions {
 
 		if (pathToFile == null) {
 			String home = System.getProperty("user.home");
+			/* Change the next line if you wish
+			 * to hard code your own path variable */
 			pathToFile = home + "/Downloads/ScheduleMe.json";
 		}
 		//System.out.println("path: " + pathToFile);	// debug stmt
