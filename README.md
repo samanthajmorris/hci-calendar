@@ -22,7 +22,7 @@ This repository contains:
 
 1. Run Main.java, enter your name and (if you have a json file with prior results) upload your json file.
 2. Submit and enter your **unavailable** times for the next week.
-3. Hit calculate when finished and the results will pop on screen for the availability of you and whoever else previously calculated on your json file.
+3. Click Calculate when finished and the results will pop on screen for the availability of you and whoever else previously calculated on your json file.
 
 ### Notes
 
