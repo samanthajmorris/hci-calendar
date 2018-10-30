@@ -8,7 +8,6 @@ How it works: each group member submits their name and the shared json file (ass
 This repository contains:
 
 * A lib repository containing .jar files for the Java modules required to download for compiler
-	
 * A tool which schedules meeting times
 
 ## Getting Started
@@ -27,9 +26,9 @@ Similarly, if running eclipse, right-click the project folder>Build Path>Configu
 
 ### Notes
 
-Only accepts json files.<br>
-If no json file is initially provided, it will be stored by default in Downloads/ScheduleMe.json (tested only for Windows). This can be manually changed in SamsFunctions.java near the top of the addEntry() function.<br>
-Names must be unique unless you wish to redo your availability.
+* Only accepts json files.<br>
+* If no json file is initially provided, it will be stored by default in Downloads/ScheduleMe.json (tested only for Windows). This can be manually changed in SamsFunctions.java near the top of the addEntry() function.<br>
+* Names must be unique unless you wish to redo your availability.
 
 ### Files in project
 
