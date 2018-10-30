@@ -48,7 +48,7 @@ This repository contains:
 
 *convertBinToTime.java* - unused except for testing purposes.
 
-*convert.java* - converts Array form for availability to String format and vice versa. The times are 6 am to 12am per day for a week. 
+*convert.java* - converts boolean array for availability to a string format and vice versa. The times are 6 am to 12am per day for a week. 
 
 *SamsFunctions.java* - Adds user entries to
 	a) a new file, ScheduleMe.json (if none provided), located in the user's Download directory
@@ -56,6 +56,8 @@ This repository contains:
 	Compares and calculates the results of each entry (user) and determines common availability.
 
 *gui_final.java* - sets up and displays the results computed by *SamsFunctions.java*.
+
+*gson-2.7.jar*, *json-20140107.jar*, *json-simple-1.1.jar* - jar files needed to run funstions in *SamsFunctions.java*.
 
 ### Created By
 
