@@ -48,7 +48,7 @@ This repository contains:
 
 *convertBinToTime.java* - unused except for testing purposes.
 
-*convert.java* - converts boolean array for availability to a string format and vice versa. The times are 6 am to 12am per day for a week. 
+*convert.java* - converts boolean array for availability to a string format and vice versa. The times are 6 AM to 12 AM per day for a week. 
 
 *SamsFunctions.java* - Adds user entries to
 	a) a new file, ScheduleMe.json (if none provided), located in the user's Download directory
