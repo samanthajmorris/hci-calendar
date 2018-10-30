@@ -14,8 +14,8 @@ This repository contains:
 
 1. Download or clone the repository.
 2. This tool depends on the following Java modules: java.io, java.lang, com.google.json(provided), java.util, java.nio, org.json.simple(provided). Please ensure these modules are in your Java environment.<br>
-If you are running on Dr. Java, add the neccessary jar files to your environment by clicking Edit>Preferences>Add Classpath, then browsing for your files in the lib repository. Once all are added, click 'Apply' then 'OK'.<br>
-Similarly, if running eclipse, right-click the project folder>Build Path>Configure Build Path, "Add External JARS...", select your files in the lib repository. Click 'Apply' then 'OK'.
+	- If you are running in Dr. Java, add the neccessary jar files to your environment by clicking Edit>Preferences>Add Classpath, then browsing for your files in the lib repository. Once all are added, click 'Apply' then 'OK'.<br>
+	- Similarly, if running in eclipse, right-click the project folder>Build Path>Configure Build Path, "Add External JARS...", select your files in the lib repository. Click 'Apply' then 'OK'.
 3. Run Main.java
 
 ## How to use
@@ -27,7 +27,7 @@ Similarly, if running eclipse, right-click the project folder>Build Path>Configu
 ### Notes
 
 * Only accepts json files.<br>
-* If no json file is initially provided, it will be stored by default in Downloads/ScheduleMe.json (tested only for Windows). This can be manually changed in SamsFunctions.java near the top of the addEntry() function.<br>
+* If no json file is initially provided, it will be stored by default in Downloads/ScheduleMe.json (tested only for Windows). This can be manually changed in SamsFunctions.java on line 48, near the top of the addEntry() function.<br>
 * Names must be unique unless you wish to redo your availability.
 
 ### Files in project
