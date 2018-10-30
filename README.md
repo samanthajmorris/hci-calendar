@@ -57,7 +57,7 @@ This repository contains:
 
 *gui_final.java* - sets up and displays the results computed by *SamsFunctions.java*.
 
-*gson-2.7.jar*, *json-20140107.jar*, *json-simple-1.1.jar* - jar files needed to run funstions in *SamsFunctions.java*.
+*gson-2.7.jar*, *json-20140107.jar*, *json-simple-1.1.jar* - jar files needed to run functions in *SamsFunctions.java*.
 
 ### Created By
 
