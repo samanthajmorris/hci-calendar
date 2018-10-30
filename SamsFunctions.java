@@ -63,10 +63,8 @@ public class SamsFunctions {
 
 					// Create the JSONObject version of the file
 					JSONObject jsonObject = (JSONObject) obj;
-					System.out.println("before: " + jsonObject.toString());
 					
 					jsonObject.put(name, num);
-					System.out.println("after:"+jsonObject.toString());
 					// Write the new JSONObject to the file
 					try (FileWriter file = new FileWriter(pathToFile)) 
 					{

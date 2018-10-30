@@ -49,7 +49,7 @@ public class CalendarPanel extends JPanel {
 		Dimension buttondim = new Dimension(75,50);  // The dimension of each button. 
 		Dimension labeldim = new Dimension(1000, 50); // dimension of the instructions label
 		String label = "Add times by clicking the drop down box under each day and ticking the checkboxes " +
-				"corresponding to the times you are <HTML><em>not available</em><HTML>.";
+				"corresponding to the times you are not available.";
 		String label_ext = "Once you are all done, click Calculate.";
 		instructions = new JLabel(label);
 		instructions.setFont(instructionsFont);
