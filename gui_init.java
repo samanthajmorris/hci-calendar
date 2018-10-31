@@ -10,6 +10,7 @@ import javax.swing.*;
 import javax.swing.filechooser.*;
 import java.awt.event.*;
 import java.awt.Color;
+import java.awt.Font;
 
 public class gui_init extends JFrame implements ActionListener {
 
@@ -20,29 +21,37 @@ public class gui_init extends JFrame implements ActionListener {
  private JButton btUploadFile, btSubmit;
  private Color lime = new Color(129, 196, 43);
  private Color maroon = new Color(234, 98, 98);
+ private Color sunshine = new Color(236, 255, 155);
+ private Font font = new Font("Courier", Font.BOLD, 14);
  public static String filePath;
  public String returnString;
  public void createView() {
 
   JPanel p = new JPanel();
+  p.setBackground(sunshine);
   getContentPane().add(p);
 
   // Question
   lbPrompt = new JLabel("Hi! Welcome to ScheduleMe.");
+  lbPrompt.setFont(font);
   p.add(lbPrompt);
   lbQuestion1 = new JLabel("If you are already part of a group, upload the shared json file.");
+  lbQuestion1.setFont(font);
   p.add(lbQuestion1);
   lbQuestion2 = new JLabel("If you are starting a new group, submit just your name to create a new session.");
+  lbQuestion2.setFont(font);
   p.add(lbQuestion2);
   
   // enter name
   lbName = new JLabel("What is your name?");
+  lbName.setFont(font);
   p.add(lbName);
   tfName = new JTextField(20);
   p.add(tfName);
 
   // existing file label updates when file selected
   lbExistingFile = new JLabel("Upload a file");
+  lbExistingFile.setFont(font);
   lbExistingFile.setForeground(maroon);
   lbExistingFile.setSize(100,30);
   p.add(lbExistingFile);
@@ -78,7 +87,7 @@ public class gui_init extends JFrame implements ActionListener {
    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    pack();
    setLocationRelativeTo(null);
-   setSize(550,200);
+   setSize(700,200);
    setBackground(lime);
    setVisible(true);
   }
