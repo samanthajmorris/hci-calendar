@@ -59,6 +59,8 @@ This repository contains:
 
 *gson-2.7.jar*, *json-20140107.jar*, *json-simple-1.1.jar* - jar files needed to run functions in *SamsFunctions.java*.
 
+*help_icon.png* - used to hover over and display a help message in *MonthYearPanel.java*.
+
 ### Created By
 
 Vistassja Williams, Samantha Morris, Keara Leibovitz, Aisha Mohammed
