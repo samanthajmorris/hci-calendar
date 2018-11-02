@@ -32,7 +32,7 @@ public class gui_init extends JFrame implements ActionListener {
 		getContentPane().add(p);
 
 		// Prompt
-		lbPrompt = new JLabel("Hi! Welcome to ScheduleMe.");
+		lbPrompt = new JLabel("<html>Hi! Welcome to <em>ScheduleMe</em>.</html>");
 		lbPrompt.setFont(font);
 		p.add(lbPrompt);
 		lbQuestion1 = new JLabel("If you are already part of a group, upload the shared json file.");

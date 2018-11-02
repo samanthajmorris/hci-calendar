@@ -48,8 +48,8 @@ public class CalendarPanel extends JPanel {
 		Dimension calcdim = new Dimension(120, 50); // dimension of the Calculate button
 		Dimension buttondim = new Dimension(75,50);  // The dimension of each button. 
 		Dimension labeldim = new Dimension(1000, 50); // dimension of the instructions label
-		String label = "Add times by clicking the drop down box under each day and ticking the checkboxes " +
-				"corresponding to the times you are not available.";
+		String label = "<html>Add times by clicking the drop down box under each day and ticking the checkboxes " +
+				"corresponding to the times you are <strong>not available</strong>.</html>";
 		String label_ext = "Once you are all done, click Calculate.";
 		instructions = new JLabel(label);
 		instructions.setFont(instructionsFont);
@@ -57,7 +57,7 @@ public class CalendarPanel extends JPanel {
 		instructions_ext.setFont(instructionsFont);
 		week = new OneWeek();
 		Color panelcol = new Color(229, 193, 188); // Light pink
-
+		
 		week.createWeek(); // Getting a new week.
 		setLayout(null); // This layout will be customized.
 		setBackground(panelcol);
@@ -70,7 +70,15 @@ public class CalendarPanel extends JPanel {
 		b6 = new JButton(Integer.toString(week.get_day_of_month(5)));
 		b7 = new JButton(Integer.toString(week.get_day_of_month(6)));
 		calculate = new JButton("Calculate");
-
+		
+		// the buttons don't do much
+		b1.setFocusable(false);
+		b2.setFocusable(false);
+		b3.setFocusable(false);
+		b4.setFocusable(false);
+		b5.setFocusable(false);
+		b6.setFocusable(false);
+		b7.setFocusable(false);
 
 		CheckableItem[] m1 = new CheckableItem[times.length]; // an array of Checkboxes
 		CheckableItem[] m2 = new CheckableItem[times.length]; 
