@@ -32,6 +32,16 @@ public class MonthYearPanel extends JPanel {
 		else
 			year = Integer.toString(week.get_year(0));
 		total_label = month + " " + year;
+		
+		// help button
+		ImageIcon help_icon = new ImageIcon("icons/help_icon.png");
+		String help_text = new String("<html>Select times in the drop down menus corresponding to "
+				+"when you are <strong>unavailable</strong>.<br>When finished, click Calculate.</html>");
+		JLabel help = new JLabel(help_icon);
+		help.setToolTipText(help_text);
+		help.setPreferredSize(getPreferredSize());
+		add(help);
+		help.setBounds(940, 10, 32, 32);
 
 		setLayout(new BorderLayout());
 		setBackground(panelcol);
