@@ -255,8 +255,7 @@ public class gui_final implements ActionListener {
 
 				if (values[0].equals("1")) {
 					ret_times += times[holdStart] + "-";
-					holdStart += createEnd;
-					System.out.println("The times[holdStart] is " + times[holdStart]);	
+					holdStart += createEnd;	
 					ret_times += times[holdStart];
 					if (times[holdStart] != "12:00PM")
 						ret_times += " ; ";
