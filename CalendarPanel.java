@@ -49,8 +49,8 @@ public class CalendarPanel extends JPanel {
 		Dimension calcdim = new Dimension(120, 50); // dimension of the Calculate button
 		Dimension buttondim = new Dimension(75,50);  // The dimension of each button. 
 		Dimension labeldim = new Dimension(1000, 50); // dimension of the instructions label
-		String label = "Add times by clicking the drop down box under each day and ticking the checkboxes " +
-				"corresponding to the times you are not available.";
+		String label = "<html>Add times by clicking the drop down box under each day and ticking the checkboxes " +
+				"corresponding to the times you are <b>not available</b>.</html>";
 		String label_ext = "Once you are all done, click Calculate.";
 		instructions = new JLabel(label);
 		instructions.setFont(instructionsFont);
@@ -182,35 +182,30 @@ public class CalendarPanel extends JPanel {
 		xplacement = xplacement + extra;
 		index = week.get_day_of_week(2);
 		placements[index - 1] = xplacement;
-//		xplacement = placements[index - 1];
 		b3.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height);	// Tuesday
 		timeBoxTues.setBounds(xplacement, yplacement + 55, boxSize.width, boxSize.height);
 		
-		xplacement = xplacement + extra; //+ 10;
+		xplacement = xplacement + extra; 
 		index = week.get_day_of_week(3);
 		placements[index - 1] = xplacement;
-//		xplacement = placements[index - 1];
 		b4.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height);	// Wednesday 
 		timeBoxWed.setBounds(xplacement, yplacement + 55, boxSize.width, boxSize.height); 
 
-		xplacement = xplacement + extra;// + 35;
+		xplacement = xplacement + extra;
 		index = week.get_day_of_week(4);
 		placements[index - 1] = xplacement;
-//		xplacement = placements[index - 1];
 		b5.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height);	// Thursday 
 		timeBoxThurs.setBounds(xplacement, yplacement + 55, boxSize.width, boxSize.height);
 		
-		xplacement = xplacement + extra;// + 25;
+		xplacement = xplacement + extra;
 		index = week.get_day_of_week(5);
 		placements[index - 1] = xplacement;
-//		xplacement = placements[index - 1];
 		b6.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height);	// Friday 
 		timeBoxFri.setBounds(xplacement, yplacement + 55, boxSize.width, boxSize.height);
 		
 		xplacement = xplacement + extra;
 		index = week.get_day_of_week(6);
 		placements[index - 1] = xplacement;
-//		xplacement = placements[index - 1];
 		b7.setBounds(xplacement, yplacement, buttonsize.width, buttonsize.height);	// Saturday
 		timeBoxSat.setBounds(xplacement, yplacement + 55, boxSize.width, boxSize.height);
 
@@ -218,11 +213,6 @@ public class CalendarPanel extends JPanel {
 		calculate.setBounds(calculate_placement, 210, calcdim.width, calcdim.height);
 		instructions.setBounds(0, 275, labeldim.width, labeldim.height);
 		instructions_ext.setBounds(0, 300, labeldim.width, labeldim.height);
-		System.out.println("The placements after the button placements are");
-		for (int i = 0; i < 7; i++)
-		{
-			System.out.println(placements[i]);
-		}
 
 	}
 	

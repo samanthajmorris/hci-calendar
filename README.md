@@ -29,7 +29,6 @@ This repository contains:
 * Only accepts json files.<br>
 * If no json file is initially provided, it will be stored by default in Downloads/ScheduleMe.json (tested only for Windows). This can be manually changed in SamsFunctions.java on line 48, near the top of the addEntry() function.<br>
 * Names must be unique unless you wish to redo your availability.
-* This is the second version of ScheduleMe in which the Layout of the days on the Calendar go straight accross the screen instead of 	  indented according to the week.
 
 ### Files in project
 

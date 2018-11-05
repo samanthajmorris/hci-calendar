@@ -31,13 +31,6 @@ public class CalendarFrame {
 		//Applying the above placements to the buttons in the CalendarPanel.
 		calp.doButtonPlacements();
 		placements = calp.getPlacements();
-		
-		System.out.println("The placements are");
-		for (int i = 0; i < 7; i++)
-		{
-			System.out.println(placements[i]);
-			
-		}
 		dayp.doDayPlacements(placements);
 
 		frame = new JFrame("ScheduleMeCalendar");
