@@ -20,7 +20,7 @@ public class gui_init extends JFrame implements ActionListener {
 	public JTextField tfName;
 	public static String name;
 	private JButton btUploadFile, btSubmit;
-	private Color lime = new Color(179, 255, 179);
+	private Color lime = new Color(50,205,50);
 	private Color maroon = new Color(234, 98, 98);
 	private Color sunshine = new Color(236, 255, 155);
 	private Font font = new Font("Courier", Font.BOLD, 14);
