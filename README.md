@@ -15,7 +15,7 @@ This repository contains:
 1. Download or clone the repository.
 2. This tool depends on the following Java modules: java.io, java.lang, com.google.json(provided), java.util, java.nio, org.json.simple(provided). Please ensure these modules are in your Java environment.  Most of the modules you would need should already be included in your Java library, but you may have to add a few which are included in the lib folder.<br>
 	- If you are running in Dr. Java, add the necessary jar files to your environment by clicking Edit>Preferences>Add Classpath, then browsing for your files in the lib repository. Once all are added, click 'Apply' then 'OK'.<br>
-	- Similarly, if running in eclipse, right-click the project folder>Build Path>Configure Build Path. Click the "Libraries" tab and then the  "Add External JARS..." button. Select your files in the lib repository. Click 'Apply' then 'OK'.
+	- Similarly, if running in eclipse, right-click the project folder>Build Path>Configure Build Path. Click the "Libraries" tab and then the  "Add External JARS..." button. Select your files in the bin/lib repository. Click 'Apply' then 'OK'.
 3. Run Main.java
 
 ## How to use
